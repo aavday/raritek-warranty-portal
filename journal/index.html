@@ -1,0 +1,545 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raritek - portal</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../libs/jquery-flipster-master/dist/jquery.flipster.min.css">
+    <link rel="stylesheet" href="../dist/assets/css/style.min.css">
+</head>
+<body>
+
+    <header class="header d-flex align-items-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
+                <img src="../dist/assets/img/logo.png" alt="" class="header__logo">
+                <div class="d-flex flex-lg-row flex-column align-items-lg-center">
+                    <a class="header__phone font-size-4 text-black text-decoration-none font-weight-bold pr-lg-4 text-sm-right text-center" href="tel:8 800 333 25 52">8 800 333 25 52</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <ul class="breadcrumbs container d-flex pt-4 pb-3">
+            <li class="breadcrumbs-item">
+                <i class="icon-back pr-2"></i>Назад
+            </li>
+            <li class="breadcrumbs-item">
+                <i class="icon-logout pr-2"></i>Выйти
+            </li>
+            <li class="breadcrumbs-item">
+                <i class="icon-account pr-2"></i>Личный кабинет
+            </li>
+        </ul>
+
+        <section class="section filter pt-3">
+            <div class="container">
+                <h1 class="font-size-5 mb-2 d-flex align-items-sm-center flex-sm-row flex-column">
+                    Общий журнал обращений
+                    <a href="" class="d-block icon-excel ml-sm-4 mt-2"></a>
+                </h1>
+
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-md-4 col-sm-6 mt-3">
+                        <button class="btn btn-grey-2 w-100" data-toggle="collapse" data-target=".filter__form-wrapper">Расширенный фильтр</button>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mt-3">
+                        <button class="btn btn-grey-2 w-100">Сводная таблица РА</button>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mt-3">
+                        <button class="btn btn-grey-2 w-100">Архив</button>
+                    </div>
+                </div>
+
+                <div class="filter__form-wrapper collapse">
+                    <form action="" class="form filter__form">
+                        <div class="form-section">
+                            <h2 class="form-title mt-0">Расширенный фильтр</h2>
+                            <div class="filter__form-row">
+                                <div class="filter__form-col-medium">
+                                    <label for="ra-number" class="form-label">№ РА</label>
+                                    <input type="text" class="form-input w-100" name="ra-number" id="ra-number">
+                                </div>
+                                <div class="filter__form-col-big">
+                                    <label for="product-designation" class="form-label">Обозначение изделия</label>
+                                    <input type="text" class="form-input w-100" name="product-designation" id="product-designation">
+                                </div>
+                            </div>
+                            <div class="filter__form-row">
+                                <div class="filter__form-col-medium">
+                                    <label for="registration-date" class="form-label">Дата оформления</label>
+                                    <input type="date" class="form-input w-100" name="registration-date" id="registration-date">
+                                </div>
+                                <div class="filter__form-col-medium">
+                                    <label for="ra-status" class="form-label">Статус РА</label>
+                                    <div class="form-select-wrapper">
+                                        <select class="form-select w-100" name="ra-status" id="ra-status">
+                                            <option value="Не задано">Не задано</option>
+                                            <option value="На доработке">На доработке</option>
+                                            <option value="Подтвержден">Подтвержден</option>
+                                            <option value="Новая заявка">Новая заявка</option>
+                                            <option value="Отклонён">Отклонён</option>
+                                            <option value="Возврат">Возврат</option>
+                                            <option value="Требуется поставка">Требуется поставка</option>
+                                            <option value="Рассмотрение">Рассмотрение</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter__form-col-medium">
+                                    <label for="auto-vin" class="form-label">VIN автотехники</label>
+                                    <input type="text" class="form-input w-100" name="auto-vin" id="auto-vin">
+                                </div>
+                                <div class="filter__form-col-for-small-inputs ml-xl-3 mt-xl-0 mt-2">
+                                    <div>Общая сумма затрат</div>
+                                    <div class="d-flex justify-content-end">
+                                        <label for="costs-from" class="form-label align-self-center mr-2 mb-3">От</label>
+                                        <input type="text" class="form-input" name="costs-from" id="costs-from" min="0">
+                                        <label for="costs-to" class="form-label align-self-center mr-2 ml-2 mb-3">До</label>
+                                        <input type="text" class="form-input" name="costs-to" id="costs-to" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__form-row">
+                                <div class="filter__form-col-medium">
+                                    <label for="engine-number" class="form-label">№ двигателя</label>
+                                    <input type="text" class="form-input w-100" name="engine-number" id="engine-number">
+                                </div>
+                                <div class="filter__form-col-medium">
+                                    <label for="recovery-date" class="form-label">Дата восстановления</label>
+                                    <input type="date" class="form-input w-100" name="recovery-date" id="recovery-date">
+                                </div>
+                                <div class="filter__form-col-medium">
+                                    <label for="failure-date" class="form-label">Дата выхода из строя</label>
+                                    <input type="date" class="form-input w-100" name="failure-date" id="failure-date">
+                                </div>
+                                <div class="filter__form-col-for-small-inputs ml-xl-3 mt-xl-0 mt-2">
+                                    <div>Пробег</div>
+                                    <div class="d-flex justify-content-end">
+                                        <label for="mileage-from" class="form-label align-self-center mr-2 mb-3">От</label>
+                                        <input type="text" class="form-input" name="mileage-from" id="mileage-from" min="0">
+                                        <label for="mileage-to" class="form-label align-self-center mr-2 ml-2 mb-3">До</label>
+                                        <input type="text" class="form-input" name="mileage-to" id="mileage-to" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <div class="filter__form-row filter__form-select-columns align-items-xl-center align-items-start flex-wrap pt-1 d-flex flex-xl-row flex-column">
+                                <div class="filter__form-col-medium mb-xl-0 mb-2 mt-xl-n3 mt-0">
+                                    <span class="font-size-2">Отображаемые столбцы:</span>
+                                </div>
+                                <div class="filter__form-col-big d-flex justify-content-md-between justify-content-start flex-wrap">
+                                    <label for="display-ra-number" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-ra-number" name="display-ra-number"><span class="mr-2"></span>
+                                        <span class="mt-1">№ обращения</span>
+                                    </label>
+                                    <label for="display-registration-date" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-registration-date" name="display-registration-date"><span class="mr-2"></span>
+                                        <span class="mt-1">Дата оформления</span>
+                                    </label>
+                                    <label for="display-auto-vin" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-auto-vin" name="display-auto-vin"><span class="mr-2"></span>
+                                        <span class="mt-1">VIN автотехники</span>
+                                    </label>
+                                    <label for="display-engine-number" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-engine-number" name="display-engine-number"><span class="mr-2"></span>
+                                        <span class="mt-1">№ двигателя</span>
+                                    </label>
+                                    <label for="display-mileage" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-mileage" name="display-mileage"><span class="mr-2"></span>
+                                        <span class="mt-1">пробег</span>
+                                    </label>
+                                    <label for="display-product-designation" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-product-designation" name="display-product-designation"><span class="mr-2"></span>
+                                        <span class="mt-1">обозначение изделия</span>
+                                    </label>
+                                    <label for="display-ra-status" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-ra-status" name="display-ra-status"><span class="mr-2"></span>
+                                        <span class="mt-1">статус РА</span>
+                                    </label>
+                                    <label for="display-costs" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-costs" name="display-costs"><span class="mr-2"></span>
+                                        <span class="mt-1">общая сумма затрат</span>
+                                    </label>
+                                    <label for="display-failure-date" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-failure-date" name="display-failure-date"><span class="mr-2"></span>
+                                        <span class="mt-1">дата выхода из строя</span>
+                                    </label>
+                                    <label for="display-recovery-date" class="form-checkbox mt-3 w-20 d-flex">
+                                        <input type="checkbox" id="display-recovery-date" name="display-recovery-date"><span class="mr-2"></span>
+                                        <span class="mt-1">дата восстановления</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <div class="col-lg-3 col-sm-6 my-sm-0 my-2 text-right">
+                                <button class="btn btn-green w-100">применить фильтр</button>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 my-sm-0 my-2">
+                                <button class="btn btn-grey-2 w-100 h-100">очистить все</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section journal-table pb-5">
+            <table class="table-native journal-table__table" cellspacing="0">
+                <tr>
+                    <th class="sortable">№ обращения</th>
+                    <th class="sortable">Дата оформления</th>
+                    <th class="sortable">VIN Автотехники</th>
+                    <th class="sortable">№ двигателя</th>
+                    <th class="sortable">Пробег</th>
+                    <th class="sortable" class="table-native-cell-medium">Обозначение изделия</th>
+                    <th class="sortable" class="table-native-cell-medium">Статус РА</th>
+                    <th class="sortable" class="table-native-cell-small">Общая сумма затрат</th>
+                    <th class="sortable">Дата выхода из строя</th>
+                    <th class="sortable">Дата восстановления</th>
+                    <th class="sortable">Действия</th>
+                </tr>
+                <tr class="table-native-row-yellow">
+                    <td>КЛЕ17122020016</td>
+                    <td>17.12.2020</td>
+                    <td>X89206015H0FF6001</td>
+                    <td>G2S0CH00001</td>
+                    <td></td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            НА ДОРАБОТКЕ
+                        </div>
+                    </td>
+                    <td>31231.00</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-native-row-green">
+                    <td>КЛЕ22122020019</td>
+                    <td>22.12.2020</td>
+                    <td>X89206015J0FF6044</td>
+                    <td>G2S0CJ00018</td>
+                    <td>150</td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            ПОДТВЕРЖДЁН
+                        </div>
+                    </td>
+                    <td>650.00</td>
+                    <td>08.12.2020</td>
+                    <td>22.12.2020</td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>КЛЕ22122020020</td>
+                    <td>23.12.2020</td>
+                    <td>X89226013H0FF6003</td>
+                    <td>G2S0CH00003</td>
+                    <td>11</td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            НОВАЯ ЗАЯВКА
+                        </div>
+                    </td>
+                    <td>623.00</td>
+                    <td>10.12.2020</td>
+                    <td>23.12.2020</td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-native-row-pink">
+                    <td>КЛЕ22122020021</td>
+                    <td>23.12.2020</td>
+                    <td>X89226013H0FF6003</td>
+                    <td>G2S0CH00003</td>
+                    <td>11</td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            ОТКЛОНЁН
+                        </div>
+                    </td>
+                    <td>623.00</td>
+                    <td>10.12.2020</td>
+                    <td>23.12.2020</td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-native-row-orange">
+                    <td>КЛЕ17122020016</td>
+                    <td>17.12.2020</td>
+                    <td>X89206015H0FF6001</td>
+                    <td>G2S0CH00001</td>
+                    <td></td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            ВОЗВРАТ
+                        </div>
+                    </td>
+                    <td>31231.00</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-native-row-grey">
+                    <td>КЛЕ23122020020</td>
+                    <td>23.12.2020</td>
+                    <td>X89226013H0FF6003</td>
+                    <td>G2S0CH00003</td>
+                    <td>11</td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            ТРЕБУЕТСЯ ПОСТАВКА
+                        </div>
+                    </td>
+                    <td>623.00</td>
+                    <td>10.12.2020</td>
+                    <td>23.12.2020</td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-native-row-cyan">
+                    <td>КЛЕ22122020019</td>
+                    <td>22.12.2020</td>
+                    <td>X89206015J0FF6044</td>
+                    <td>G2S0CJ00018</td>
+                    <td>150</td>
+                    <td class="table-native-cell-nowrap">
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                        <div>Болт головки цилиндра (короткий), артикул: B30-1003053</div>
+                    </td>
+                    <td class="table-native-cell-highlighted">
+                        <div class="mb-4">
+                            РАССМОТРЕНИЕ
+                        </div>
+                    </td>
+                    <td>650.00</td>
+                    <td>08.12.2020</td>
+                    <td>23.12.2020</td>
+                    <td>
+                        <div class="dropdown position-relative">
+                            <div class="burger" data-toggle="dropdown">
+                                <div class="burger-item"></div>
+                            </div>
+                            <div class="flex-column align-items-center dropdown-menu">
+                                <button class="journal-table-action dropdown-item">Редактирование</button>
+                                <button class="journal-table-action dropdown-item">Отправить на рассмотрение</button>
+                                <button class="journal-table-action dropdown-item">Печать</button>
+                                <button class="journal-table-action dropdown-item">Скачать</button>
+                                <button class="journal-table-action dropdown-item">Отправить на возврат</button>
+                                <button class="journal-table-action dropdown-item">Сформировать счет</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-md-row flex-column">
+                <img src="../dist/assets/img/logo-footer.png" alt="" class="footer__logo mb-md-0 mb-4">
+                <div class="d-flex align-items-center flex-sm-row flex-column">
+                    <div class="mt-sm-0 mt-3 mb-sm-0 mb-2">
+                        <a href="" class="text-decoration-none">
+                            <svg class="icon-inst mx-2">
+                                <linearGradient id="linear-gradient" gradientTransform="rotate(125) translate(-0.4, 0)">
+                                    <stop offset="0%" stop-color="#ff9500"/>
+                                    <stop offset="50%" stop-color="#f71a7c"/>
+                                    <stop offset="100%" stop-color="#61056C"/>
+                                </linearGradient>
+                                <use class="icon-inst__hovered" xlink:href="#inst-icon" fill="url(#linear-gradient)"></use>
+                                <use class="icon-inst__not-hovered" xlink:href="#inst-icon" fill="#6d6d6d"></use>
+                            </svg>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <svg class="icon-youtube mx-2">
+                                <use xlink:href="#youtube-icon"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <button class="btn btn-grey ml-sm-4 mb-sm-0 mb-3 modal-native-toggle" data-modal="feedback-modal">
+                        обратная связь
+                    </button>
+                    <a href="https://www.itchelny.ru/"><img src="../dist/assets/img/itchelny_logo.png" alt="" class="ml-sm-5"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-native login-modal">
+        <div class="modal-native-content">
+            <a class="modal-native-close"></a>
+            <form action="" class="form modal-native-form login-modal__form">
+                <input type="text" class="form-input login-modal__form-login w-100" placeholder="Логин">
+                <input type="password" class="form-input login-modal__form-password w-100" placeholder="Пароль">
+                <button type="submit" class="btn btn-green form-btn login-modal__form-btn w-100 my-2">войти в личный кабинет</button>
+                <label for="remember-me" class="form-checkbox login-modal__form-remember mt-2">
+                    <input type="checkbox" id="remember-me"><span class="mr-2"></span>
+                    Запомнить меня
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-native feedback-modal">
+        <div class="modal-native-content">
+            <a class="modal-native-close"></a>
+            <form action="" class="form modal-native-form feedback-modal__form">
+                <input type="text" class="form-input feedback-modal__form-name w-100" placeholder="Ваше имя">
+                <input type="tel" class="form-input feedback-modal__form-phone w-100" placeholder="Ваш телефон">
+                <button type="submit" class="btn form-btn btn-green feedback-modal__form-btn w-100 my-2">заказать звонок</button>
+            </form>
+        </div>
+    </div>
+    
+    <svg display="none">
+        <symbol id="inst-icon" viewBox="0 0 512 512">
+            <g>
+                <path class="st0" d="M258.9,507.2C120.4,507.9,6.6,392.6,9.9,252C12.9,118,124,7,262.3,8.7c136.6,1.7,249.4,115.4,245.8,256
+                    C504.7,398.2,394.7,507.8,258.9,507.2z M40.2,257.9c0.9,122.6,97.9,218.2,214.4,219.9c123.6,1.8,222.8-95.7,223.1-219.5
+                    c0.1-122.7-97.8-218-214.5-220.3C143.1,35.7,41.2,132.3,40.2,257.9z"/>
+                <path class="st0" d="M413.2,261.3c0,21.8-0.6,43.7,0.1,65.5c1.5,41.9-28.7,76.9-68.6,86.9c-7.8,2-16.1,3.2-24.1,3.3
+                    c-42.3,0.3-84.6,0.7-126.9,0c-35.3-0.6-63.1-15.6-81.9-46.1c-7.2-11.7-10.8-24.7-10.8-38.5c-0.1-47.5-0.5-95,0.1-142.4
+                    c0.4-31,15.9-53.9,41.6-70.3c16-10.2,33.7-14.8,52.6-14.8c41.3-0.1,82.6-0.5,123.9,0.1c36.4,0.5,65.2,15.7,83.9,47.7
+                    c6.7,11.5,10.1,24.2,10.1,37.7C413.1,214,413.2,237.7,413.2,261.3z M124,261.1c0,22.8,0,45.7,0,68.5c0,9.1,1.7,17.9,6,26
+                    c13.8,26,36.4,37.8,64.9,38.2c41.3,0.6,82.7,0.3,124,0c7.1,0,14.3-1.2,21.2-3c27.5-7.4,50.9-31.2,50.1-66.1c-1-44-0.2-88-0.2-132
+                    c0-9.7-1.8-18.9-6.5-27.4c-14.1-25.3-36.6-36.8-64.6-37.2c-41.2-0.6-82.3-0.4-123.5,0c-8.2,0.1-16.6,1.6-24.5,4
+                    c-26.9,8.3-48.1,32.2-47,64.4C124.6,218.1,124,239.6,124,261.1z"/>
+                <path class="st0" d="M257.1,183c40.7-0.1,73.7,32.4,73.7,72.4c-0.1,39.8-33,72.3-73.3,72.4c-40.6,0.1-73.5-32.3-73.5-72.5
+                    C184,215.4,216.6,183.1,257.1,183z M257.1,206.2c-27.4,0.1-50,22.4-49.9,49.3s22.6,49,50.2,49.1c27.5,0,50.1-22.1,50.2-49
+                    C307.5,228.3,284.8,206.1,257.1,206.2z"/>
+                <path class="st0" d="M354.8,176.7c0.2,8.5-6.8,16-15.1,16.3c-8.5,0.3-15.8-6.9-15.9-15.8c-0.1-8.7,6.6-16,14.9-16.3
+                    C347.2,160.6,354.6,167.9,354.8,176.7z"/>
+            </g>
+        </symbol>
+        <symbol id="youtube-icon" viewBox="0 0 512 512">
+            <g>
+                <path class="st0" d="M258.8,507.2C120.4,507.8,6.6,392.6,9.9,251.9C13,118,123.9,7.2,262,8.7C398.7,10.2,511.8,124,508.1,264.8
+                    C504.6,398.3,394.6,507.9,258.8,507.2z M40.2,258.2C41.3,383.3,142.4,479.5,261.8,478c116.3-1.5,215.7-96,215.8-219.9
+                    C477.7,132.9,375.7,36.4,255.9,38C139.6,39.6,41.1,134.3,40.2,258.2z"/>
+                <path class="st0" d="M156.3,356.8c-7.2-0.3-14.6-1.7-21.5-3.8c-16.4-5-23.6-18.1-25.8-33.7c-2.5-17.6-4.2-35.4-4.4-53.2
+                    c-0.2-23.9,1.3-47.9,2.6-71.9c0.6-10.3,3.3-20.5,9-29.3c8.1-12.7,20.8-17,35-17.8c65.9-3.8,131.9-4,197.8-0.8
+                    c7.3,0.4,14.6,0.9,21.9,1.7c16.4,2,28.3,10.6,32.8,26.6c3.3,11.9,5.6,24.4,6,36.8c0.9,26.9,0.7,53.9,0.1,80.9
+                    c-0.3,11.2-2.2,22.5-4.9,33.5c-4.5,18.6-17.3,28.8-36.3,30.4c-16.3,1.3-32.6,2.2-48.9,2.5C299.1,359.1,190.1,358.2,156.3,356.8z
+                     M308.8,248.7c-28-14.6-55.1-28.7-82.5-43c0,29,0,57,0,85.8C253.9,277.2,281,263.2,308.8,248.7z"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <script src="../libs/jquery/dist/jquery.min.js"></script>
+    <script src="../libs/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
+    <script src="../libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../dist/assets/js/main-min.js"></script>
+
+</body>
+</html>

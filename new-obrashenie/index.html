@@ -1,0 +1,525 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raritek - portal</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../libs/jquery-flipster-master/dist/jquery.flipster.min.css">
+    <link rel="stylesheet" href="../dist/assets/css/style.min.css">
+</head>
+<body>
+
+    <header class="header d-flex align-items-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
+                <img src="../dist/assets/img/logo.png" alt="" class="header__logo">
+                <div class="d-flex flex-lg-row flex-column align-items-lg-center">
+                    <a class="header__phone font-size-4 text-black text-decoration-none font-weight-bold pr-lg-4 text-sm-right text-center" href="tel:8 800 333 25 52">8 800 333 25 52</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <ul class="breadcrumbs container d-flex pt-4 pb-3">
+            <li class="breadcrumbs-item">
+                <i class="icon-back pr-2"></i>Назад
+            </li>
+            <li class="breadcrumbs-item">
+                <i class="icon-logout pr-2"></i>Выйти
+            </li>
+            <li class="breadcrumbs-item">
+                <i class="icon-account pr-2"></i>Личный кабинет
+            </li>
+        </ul>
+
+        <section class="section new-appeal pt-3">
+            <div class="container">
+                <h1 class="font-size-5 mb-2 d-flex align-items-sm-center flex-sm-row flex-column">
+                    Новое обращение
+                    <div class="d-flex mt-sm-0 mt-2">
+                        <a href="" class="icon-print ml-sm-5 mb-n1 mr-1" title="Печать"></a>
+                        <a href="" class="icon-download mb-n1 ml-4" title="Скачать"></a>
+                    </div>
+                </h1>
+                <form action="" class="form new-appeal__form">
+                    <div class="form-section">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <label class="form-label" for="number">Номер</label>
+                                <input type="text" class="form-input w-100" id="number" name="number" value="Поле будет заполнено автоматически" readonly>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <label class="form-label" for="date">Дата</label>
+                                <input type="date" class="form-input w-100" id="date" name="date" readonly>
+                            </div>
+                        </div>
+                        <label class="form-label" for="performer-name">Наименование ИСПОЛНИТЕЛЯ</label>
+                        <input type="text" class="form-input w-100" id="performer-name" name="performer-name" value="Сервисный центр г. Казань" readonly>
+                    </div>
+                    <div class="form-section">
+                        <label class="form-label form-title">1. Владелец</label>
+                        <div class="position-relative">
+                            <input type="text" class="form-input w-100" id="owner" name="owner">
+                            <div class="burger modal-native-link">
+                                <span class="burger-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">2. Данные об автотехнике</div>
+                        <label class="form-label" for="vin">VIN автотехники</label>
+                        <div class="position-relative">
+                            <input type="text" class="form-input w-100" id="vin" name="vin">
+                            <div class="burger modal-native-link">
+                                <span class="burger-item"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="form-label" for="brand-and-model">Марка и модель автотехники</label>
+                                <input type="text" class="form-input w-100" id="brand-and-model" name="brand-and-model" readonly>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="engine-model">Модель ДВС</label>
+                                <input type="text" class="form-input w-100" id="engine-model" name="engine-model" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="engine-number">Номер двигателя</label>
+                                <input type="text" class="form-input w-100" id="engine-number" name="engine-number" readonly>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="chassis-vin">VIN шасси</label>
+                                <input type="text" class="form-input w-100" id="chassis-vin" name="chassis-vin" readonly>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="contract">Договор купли-продажи</label>
+                                <input type="text" class="form-input w-100" id="contract" name="contract" readonly>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="warranty-start-date">Дата начала гарантии</label>
+                                <input type="date" class="form-input w-100" id="warranty-start-date" name="warranty-start-date" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">3. Данные по ремонту</div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="repair-start-date">Дата начала ремонта</label>
+                                <input type="date" class="form-input w-100" id="repair-start-date" name="repair-start-date">
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="repair-end-date">Дата окончания ремонта</label>
+                                <input type="date" class="form-input w-100" id="repair-end-date" name="repair-end-date">
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <label class="form-label" for="mileage">Пробег, км</label>
+                                <input type="number" min="1" class="form-input w-100" id="mileage" name="mileage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">4. Описание неисправности</div>
+                        <label class="form-label" for="defect-details">Информация от Потребителя</label>
+                        <textarea class="form-textarea w-100" name="defect-details" id="defect-details" cols="30" rows="6"></textarea>
+                        <label class="form-label" for="actual-defect">Описание фактически установленного дефекта</label>
+                        <textarea class="form-textarea w-100" name="actual-defect" id="actual-defect" cols="30" rows="6"></textarea>
+                        <label class="form-label" for="defect-cause">Предполагаемая причина неисправности</label>
+                        <textarea class="form-textarea w-100" name="defect-cause" id="defect-cause" cols="30" rows="6"></textarea>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">5. Выполненные работы</div>
+                        <div class="row flex-md-row flex-column-reverse">
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="performed-works">Выполненные работы</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-input w-100" id="performed-works" name="performed-works" readonly>
+                                    <div class="burger modal-native-link">
+                                        <span class="burger-item"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-8 align-self-md-end mb-md-2 mt-md-0 mt-4 d-flex">
+                                <button class="btn btn-white-dashed add-input"><span class="cross cross-plus cross-grey"></span>Добавить</button>
+                                <div class="my-auto"><span class="cross cross-close cross-red ml-3"></span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="time-rate">Норма времени, чел. - час</label>
+                                <input type="text" class="form-input w-100" id="time-rate" name="time-rate" readonly>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="work-costs">Затраты на работу, руб.</label>
+                                <input type="text" class="form-input w-100" id="work-costs" name="work-costs" readonly>
+                            </div>
+                        </div>
+                        <div class="form-subtitle">Дополнительные работы</div>
+                        <label class="form-label" for="additional-work-description">Описание</label>
+                        <textarea class="form-textarea w-100" name="additional-work-description" id="additional-work-description" cols="30" rows="6"></textarea>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="additional-work-costs">Затраты за доп. работу</label>
+                                <input type="text" class="form-input w-100" id="additional-work-costs" name="additional-work-costs">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="additional-work-total">Общая сумма дополнительных работ</label>
+                                <input type="text" class="form-input w-100" id="additional-work-total" name="additional-work-total">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">6. Вышедшие из строя узлы и детали</div>
+                        <div class="row flex-md-row flex-column-reverse">
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="defected-part-name">Наименование детали</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-input w-100" id="defected-part-name" name="defected-part-name" readonly>
+                                    <div class="burger modal-native-link">
+                                        <span class="burger-item"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-8 align-self-md-end mb-md-2 mt-md-0 mt-4 d-flex">
+                                <button class="btn btn-white-dashed add-input"><span class="cross cross-plus cross-grey"></span>Добавить</button>
+                                <div class="my-auto"><span class="cross cross-close cross-red ml-3"></span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 col-md-7 col-sm-8">
+                                <label class="form-label" for="defected-part-number">Заводской номер, маркировка</label>
+                                <input type="text" class="form-input w-100" id="defected-part-number" name="defected-part-number">
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6">
+                                <label class="form-label" for="amount-of-defected-parts">Количество</label>
+                                <input type="number" min="1" class="form-input w-100" id="amount-of-defected-parts" name="amount-of-defected-parts">
+                            </div>
+                        </div>
+                        <label class="form-label" for="note">Примечание</label>
+                        <textarea class="form-textarea w-100" name="note" id="note" cols="30" rows="6"></textarea>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">7. Детали, узлы и материалы, установленные для устранения неисправности</div>
+                        <div class="row flex-md-row flex-column-reverse">
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="new-part-name">Наименование детали</label>
+                                <input type="text" class="form-input w-100" id="new-part-name" name="new-part-name" readonly>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-8 align-self-md-end mb-md-2 mt-md-0 mt-4 d-flex">
+                                <button class="btn btn-white-dashed add-input"><span class="cross cross-plus cross-grey"></span>Добавить</button>
+                                <div class="my-auto"><span class="cross cross-close cross-red ml-3"></span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 col-md-7 col-sm-8">
+                                <label class="form-label" for="new-part-number">Заводской номер, маркировка</label>
+                                <input type="text" class="form-input w-100" id="new-part-number" name="new-part-number">
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6">
+                                <label class="form-label" for="amount-of-new-parts">Количество</label>
+                                <input type="number" min="1" class="form-input w-100" id="amount-of-new-parts" name="amount-of-new-parts">
+                            </div>
+                        </div>
+                        <label class="form-label" for="new-parts-note">Примечание</label>
+                        <textarea class="form-textarea w-100" name="new-parts-note" id="new-parts-note" cols="30" rows="6"></textarea>
+                        <div class="row align-items-end">
+                            <div class="col-lg-4 col-md-6">
+                                <label class="form-label" for="new-parts-cost">Затраты на запасные части</label>
+                                <input type="text" class="form-input w-100" id="new-parts-cost" name="new-parts-cost" readonly>
+                            </div>
+                            <div class="col-lg-3 col-md-4 mb-md-3 pb-md-1 mt-md-0 mt-3">
+                                <label for="need-shipment" class="form-checkbox mt-2">
+                                    Требуется поставка
+                                    <input type="checkbox" id="need-shipment" name="need-shipment"><span class="ml-2 mb-n1"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <label class="form-label" for="new-parts-total">Сумма затрат на запасные части</label>
+                                <input type="text" class="form-input w-100" id="new-parts-total" name="new-parts-total" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">8. Общая сумма по акту</div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <label class="form-label" for="currency">Валюта</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-input w-100" id="currency" name="currency" readonly>
+                                    <div class="burger modal-native-link">
+                                        <span class="burger-item"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-8">
+                                <label class="form-label" for="spare-parts">Запчасти</label>
+                                <input type="text" class="form-input w-100" id="spare-parts" name="spare-parts" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="labor-cost">Трудозатраты</label>
+                                <input type="text" class="form-input w-100" id="labor-cost" name="labor-cost" readonly>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="additional-labor-cost">Дополнительные</label>
+                                <input type="text" class="form-input w-100" id="additional-labor-cost" name="additional-labor-cost" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="form-label" for="act-total-cost">Всего затрат к акту</label>
+                                <input type="text" class="form-input w-100" id="act-total-cost" name="act-total-cost" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-title">Утверждено</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label" for="manager">Руководитель</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-input w-100" id="manager" name="manager" readonly>
+                                    <div class="burger modal-native-link">
+                                        <span class="burger-item"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="basis">Основание</label>
+                                <input type="text" class="form-input w-100" id="basis" name="basis" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label" for="warranty-engineer">Инженер по гарантии</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-input w-100" id="warranty-engineer" name="warranty-engineer" readonly>
+                                    <div class="burger modal-native-link">
+                                        <span class="burger-item"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="form-label">Копия ПТС</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="pts-copy" class="form-file">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="pts-copy" id="pts-copy" accept="image/jpeg,application/pdf">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"></div>
+                                </label>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <button class="btn btn-square-white-dashed add-input" data-add="pts-copy">
+                                    <span class="cross cross-plus cross-grey mr-1"></span>
+                                    Добавить
+                                </button>
+                            </div>
+                        </div>
+                        <label class="form-label">Копия СК</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="sk-copy" class="form-file">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="sk-copy" id="sk-copy" accept="image/jpeg,application/pdf">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"></div>
+                                </label>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <button class="btn btn-square-white-dashed add-input" data-add="sk-copy">
+                                    <span class="cross cross-plus cross-grey mr-1"></span>
+                                    Добавить
+                                </button>
+                            </div>
+                        </div>
+                        <label class="form-label">Фотоматериалы</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="photo" class="form-file">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="photo" id="photo">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"></div>
+                                </label>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <button class="btn btn-square-white-dashed add-input" data-add="photo">
+                                    <span class="cross cross-plus cross-grey mr-1"></span>
+                                    Добавить
+                                </button>
+                            </div>
+                        </div>
+                        <label class="form-label">Внешний вид автотехники</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="exterior-look" class="form-file">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="exterior-look" id="exterior-look" accept="image/jpeg,application/pdf">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"></div>
+                                </label>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <button class="btn btn-square-white-dashed add-input" data-add="exterior-look">
+                                    <span class="cross cross-plus cross-grey mr-1"></span>
+                                    Добавить
+                                </button>
+                            </div>
+                        </div>
+                        <label class="form-label">Рекламационный акт</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="complaint-report" class="form-file">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="complaint-report" id="complaint-report" accept="image/jpeg,application/pdf">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"></div>
+                                </label>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <button class="btn btn-square-white-dashed add-input" data-add="complaint-report">
+                                    <span class="cross cross-plus cross-grey mr-1"></span>
+                                    Добавить
+                                </button>
+                            </div>
+                            <div class="col-xl-3 px-xl-0 pt-xl-5 my-xl-auto pb-xl-0 pb-4 text-grey">
+                                Заполненный из данной программы, распечатанный, заверенный подписью и печатью
+                            </div>
+                        </div>
+                        <label class="form-label">Пример инпута для заполненного обращения</label>
+                        <div class="row align-items-end">
+                            <div class="col-xl-3 col-sm-6">
+                                <label for="primer" class="form-file inputed">
+                                    <i class="icon-paperclip mb-3"></i>
+                                    <input type="file" name="primer" id="primer">
+                                    Прикрепить вложение в формате *.jpg / *.pdf
+                                    <div class="form-file-img-wrapper"><img src="../dist/assets/img/itchelny_logo.png"></div>
+                                <span class="cross cross-close cross-grey"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="personal-data-agree" class="form-checkbox mt-2">
+                        <input type="checkbox" id="personal-data-agree" name="personal-data-agree"><span class="mr-2"></span>
+                        Согласен на обработку персональных данных
+                    </label>
+                    <div class="row my-5">
+                        <div class="col-sm-6 d-flex mb-sm-0 mb-3">
+                            <button class="btn btn-green ml-auto form-btn-w-50">Сохранить данные</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-lightgrey form-btn-w-50"><span class="cross cross-close cross-white"></span>Очистить всё</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-md-row flex-column">
+                <img src="../dist/assets/img/logo-footer.png" alt="" class="footer__logo mb-md-0 mb-4">
+                <div class="d-flex align-items-center flex-sm-row flex-column">
+                    <div class="mt-sm-0 mt-3 mb-sm-0 mb-2">
+                        <a href="" class="text-decoration-none">
+                            <svg class="icon-inst mx-2">
+                                <linearGradient id="linear-gradient" gradientTransform="rotate(125) translate(-0.4, 0)">
+                                    <stop offset="0%" stop-color="#ff9500"/>
+                                    <stop offset="50%" stop-color="#f71a7c"/>
+                                    <stop offset="100%" stop-color="#61056C"/>
+                                </linearGradient>
+                                <use class="icon-inst__hovered" xlink:href="#inst-icon" fill="url(#linear-gradient)"></use>
+                                <use class="icon-inst__not-hovered" xlink:href="#inst-icon" fill="#6d6d6d"></use>
+                            </svg>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <svg class="icon-youtube mx-2">
+                                <use xlink:href="#youtube-icon"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <button class="btn btn-grey ml-sm-4 mb-sm-0 mb-3 modal-native-toggle" data-modal="feedback-modal">
+                        обратная связь
+                    </button>
+                    <a href="https://www.itchelny.ru/"><img src="../dist/assets/img/itchelny_logo.png" alt="" class="ml-sm-5"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-native login-modal">
+        <div class="modal-native-content">
+            <a class="modal-native-close"></a>
+            <form action="" class="form modal-native-form login-modal__form">
+                <input type="text" class="form-input login-modal__form-login w-100" placeholder="Логин">
+                <input type="password" class="form-input login-modal__form-password w-100" placeholder="Пароль">
+                <button type="submit" class="btn btn-green form-btn login-modal__form-btn w-100 my-2">войти в личный кабинет</button>
+                <label for="remember-me" class="form-checkbox login-modal__form-remember mt-2">
+                    <input type="checkbox" id="remember-me"><span class="mr-2"></span>
+                    Запомнить меня
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-native feedback-modal">
+        <div class="modal-native-content">
+            <a class="modal-native-close"></a>
+            <form action="" class="form modal-native-form feedback-modal__form">
+                <input type="text" class="form-input feedback-modal__form-name w-100" placeholder="Ваше имя">
+                <input type="tel" class="form-input feedback-modal__form-phone w-100" placeholder="Ваш телефон">
+                <button type="submit" class="btn form-btn btn-green feedback-modal__form-btn w-100 my-2">заказать звонок</button>
+            </form>
+        </div>
+    </div>
+    
+    <svg display="none">
+        <symbol id="inst-icon" viewBox="0 0 512 512">
+            <g>
+                <path class="st0" d="M258.9,507.2C120.4,507.9,6.6,392.6,9.9,252C12.9,118,124,7,262.3,8.7c136.6,1.7,249.4,115.4,245.8,256
+                    C504.7,398.2,394.7,507.8,258.9,507.2z M40.2,257.9c0.9,122.6,97.9,218.2,214.4,219.9c123.6,1.8,222.8-95.7,223.1-219.5
+                    c0.1-122.7-97.8-218-214.5-220.3C143.1,35.7,41.2,132.3,40.2,257.9z"/>
+                <path class="st0" d="M413.2,261.3c0,21.8-0.6,43.7,0.1,65.5c1.5,41.9-28.7,76.9-68.6,86.9c-7.8,2-16.1,3.2-24.1,3.3
+                    c-42.3,0.3-84.6,0.7-126.9,0c-35.3-0.6-63.1-15.6-81.9-46.1c-7.2-11.7-10.8-24.7-10.8-38.5c-0.1-47.5-0.5-95,0.1-142.4
+                    c0.4-31,15.9-53.9,41.6-70.3c16-10.2,33.7-14.8,52.6-14.8c41.3-0.1,82.6-0.5,123.9,0.1c36.4,0.5,65.2,15.7,83.9,47.7
+                    c6.7,11.5,10.1,24.2,10.1,37.7C413.1,214,413.2,237.7,413.2,261.3z M124,261.1c0,22.8,0,45.7,0,68.5c0,9.1,1.7,17.9,6,26
+                    c13.8,26,36.4,37.8,64.9,38.2c41.3,0.6,82.7,0.3,124,0c7.1,0,14.3-1.2,21.2-3c27.5-7.4,50.9-31.2,50.1-66.1c-1-44-0.2-88-0.2-132
+                    c0-9.7-1.8-18.9-6.5-27.4c-14.1-25.3-36.6-36.8-64.6-37.2c-41.2-0.6-82.3-0.4-123.5,0c-8.2,0.1-16.6,1.6-24.5,4
+                    c-26.9,8.3-48.1,32.2-47,64.4C124.6,218.1,124,239.6,124,261.1z"/>
+                <path class="st0" d="M257.1,183c40.7-0.1,73.7,32.4,73.7,72.4c-0.1,39.8-33,72.3-73.3,72.4c-40.6,0.1-73.5-32.3-73.5-72.5
+                    C184,215.4,216.6,183.1,257.1,183z M257.1,206.2c-27.4,0.1-50,22.4-49.9,49.3s22.6,49,50.2,49.1c27.5,0,50.1-22.1,50.2-49
+                    C307.5,228.3,284.8,206.1,257.1,206.2z"/>
+                <path class="st0" d="M354.8,176.7c0.2,8.5-6.8,16-15.1,16.3c-8.5,0.3-15.8-6.9-15.9-15.8c-0.1-8.7,6.6-16,14.9-16.3
+                    C347.2,160.6,354.6,167.9,354.8,176.7z"/>
+            </g>
+        </symbol>
+        <symbol id="youtube-icon" viewBox="0 0 512 512">
+            <g>
+                <path class="st0" d="M258.8,507.2C120.4,507.8,6.6,392.6,9.9,251.9C13,118,123.9,7.2,262,8.7C398.7,10.2,511.8,124,508.1,264.8
+                    C504.6,398.3,394.6,507.9,258.8,507.2z M40.2,258.2C41.3,383.3,142.4,479.5,261.8,478c116.3-1.5,215.7-96,215.8-219.9
+                    C477.7,132.9,375.7,36.4,255.9,38C139.6,39.6,41.1,134.3,40.2,258.2z"/>
+                <path class="st0" d="M156.3,356.8c-7.2-0.3-14.6-1.7-21.5-3.8c-16.4-5-23.6-18.1-25.8-33.7c-2.5-17.6-4.2-35.4-4.4-53.2
+                    c-0.2-23.9,1.3-47.9,2.6-71.9c0.6-10.3,3.3-20.5,9-29.3c8.1-12.7,20.8-17,35-17.8c65.9-3.8,131.9-4,197.8-0.8
+                    c7.3,0.4,14.6,0.9,21.9,1.7c16.4,2,28.3,10.6,32.8,26.6c3.3,11.9,5.6,24.4,6,36.8c0.9,26.9,0.7,53.9,0.1,80.9
+                    c-0.3,11.2-2.2,22.5-4.9,33.5c-4.5,18.6-17.3,28.8-36.3,30.4c-16.3,1.3-32.6,2.2-48.9,2.5C299.1,359.1,190.1,358.2,156.3,356.8z
+                     M308.8,248.7c-28-14.6-55.1-28.7-82.5-43c0,29,0,57,0,85.8C253.9,277.2,281,263.2,308.8,248.7z"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <script src="../libs/jquery/dist/jquery.min.js"></script>
+    <script src="../libs/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
+    <script src="../dist/assets/js/main-min.js"></script>
+
+</body>
+</html>
